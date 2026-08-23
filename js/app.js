@@ -1,0 +1,1 @@
+function prosesData(){hasil.textContent=inputData.value;}
