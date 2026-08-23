@@ -1,2 +1,164 @@
 <!DOCTYPE html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Laporan Harian K3L & KAM</title><link rel="stylesheet" href="css/style.css"></head><body><h1>Laporan Harian K3L & KAM - V1</h1><textarea id="inputData" rows="15" style="width:100%"></textarea><br><br><button onclick="prosesData()">Proses Data</button><pre id="hasil"></pre><script src="js/app.js"></script></body></html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Laporan Harian K3L & KAM</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="logo-left">
+            <img id="logoDanantara" src="" alt="">
+            <img id="logoHSSE" src="" alt="">
+        </div>
+
+        <div class="title-area">
+            <h1>LAPORAN HARIAN K3L & KAM</h1>
+
+            <input type="date" id="tanggal">
+        </div>
+
+        <div class="logo-right">
+            <img id="logoPLN" src="" alt="">
+        </div>
+
+    </div>
+
+    <div class="top-section">
+
+        <div class="input-area">
+
+            <h2>Input Laporan Harian</h2>
+
+            <textarea id="inputText"
+            placeholder="Tempel format laporan harian di sini"></textarea>
+
+            <button onclick="prosesData()">
+                Proses Data
+            </button>
+
+        </div>
+
+        <div class="map-area">
+
+            <h3>Peta Wilayah</h3>
+
+            <img id="petaWilayah" src="">
+
+        </div>
+
+    </div>
+
+    <div id="previewLaporan">
+
+        <div class="scoreboard">
+
+            <h2>SCOREBOARD WIG 1</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>LM</th>
+                        <th>Target</th>
+                        <th>Realisasi</th>
+                        <th>Kum Awal</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodyLM">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="kendala-box">
+
+            <h3>Kendala</h3>
+
+            <textarea id="kendala"></textarea>
+
+        </div>
+
+        <div class="komitmen-box">
+
+            <h3>Komitmen</h3>
+
+            <textarea id="komitmen"></textarea>
+
+        </div>
+
+        <div class="eviden-section">
+
+            <h2>EVIDEN FOTO</h2>
+
+            <div id="evidenContainer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="action-buttons">
+
+        <button onclick="previewPDF()">
+            Preview
+        </button>
+
+        <button onclick="downloadPDF()">
+            Download PDF
+        </button>
+
+    </div>
+
+    <div class="upload-section">
+
+        <h2>Upload Logo & Peta</h2>
+
+        <div class="upload-grid">
+
+            <div>
+                <label>Logo Danantara</label>
+                <input type="file" id="uploadDanantara">
+            </div>
+
+            <div>
+                <label>Logo HSSE</label>
+                <input type="file" id="uploadHSSE">
+            </div>
+
+            <div>
+                <label>Logo PLN</label>
+                <input type="file" id="uploadPLN">
+            </div>
+
+            <div>
+                <label>Peta Wilayah</label>
+                <input type="file" id="uploadPeta">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
